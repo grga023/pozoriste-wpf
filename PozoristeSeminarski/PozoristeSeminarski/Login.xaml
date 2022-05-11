@@ -1,0 +1,30 @@
+﻿<Window x:Class="PozoristeSeminarski.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PozoristeSeminarski"
+        mc:Ignorable="d"
+        Title="Login" 
+        Height="480" 
+        Width="480" 
+        FontSize="14" 
+        Background="CornflowerBlue"
+        WindowStartupLocation ="CenterScreen">
+
+    <Border Background="LightBlue" CornerRadius="20" Margin="10">
+        <StackPanel Margin="20">
+            <Label Content="LOGOVANJE" Foreground="Black" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+            <Separator/>
+            <Label Content="USERNAME" Foreground="Black" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <TextBox Name="txtUsername" Background="White" FontSize="18" Margin="0 5 0 15"/>
+            <Label Content="PASSWORD" Foreground="Black" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+            <PasswordBox Name="txtPassword" Background="White" FontSize="18" Margin="0 5 0 15"/>
+            <Button x:Name="txtLogovanje" Click="btnLogovanje_Click" Content="Uloguj se" Margin="60 20 60 30" Background="White" FontSize="18" />
+            <Separator/>
+            <Label Content="ILI" Foreground="Black" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold" Margin="0 5 0 15"/>
+            <Button x:Name="txtRegistracija" Click="btnRegistracija_Click" Content="Registruj se" Margin="60 10" Background="White" FontSize="18"/>
+
+        </StackPanel>
+    </Border>
+</Window>

@@ -1,0 +1,204 @@
+﻿<Window x:Class="PozoristeSeminarski.IzvodjenjePredstve"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PozoristeSeminarski"
+        mc:Ignorable="d"
+        Height="450" Width="900"
+        Background="CornflowerBlue"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="NoResize"
+        WindowStartupLocation ="CenterScreen">
+
+
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="450"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220">
+
+            </ColumnDefinition>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Grid Background="LightBlue"
+             Grid.ColumnSpan="2">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="121"/>
+                    <RowDefinition Height="29"/>
+                    <RowDefinition Height="29"/>
+                    <RowDefinition Height="29"/>
+                    <RowDefinition Height="29"/>
+                    <RowDefinition Height="29"/>
+                    <RowDefinition Height="167"/>
+                </Grid.RowDefinitions>
+
+                <TextBox 
+                    Text="UPRAVLJANJE POZORISTIMA"
+                    TextWrapping="Wrap"
+                    Foreground="Red"
+                    Background="Transparent"
+                    Grid.Row="0"
+                    FontWeight="Bold"
+                    FontSize="20" 
+                    Height="80" Width="220"
+                    TextAlignment="Center"
+                    BorderThickness="0" Margin="0,31,0,10"/>
+
+                <Button x:Name="txtPozorista" 
+                    Background="Transparent" 
+                    Grid.Row="1"
+                    Click="btnPozorista_Click" 
+                    Content="POZORISTA" 
+                    FontWeight="Bold"
+                    Height="30" 
+                    FontSize="18"
+                    BorderThickness="0"/>
+
+                <Button x:Name="txtpredstave" 
+                    Background="Transparent" 
+                    Grid.Row="2"
+                    Click="btnPredstave_Click" 
+                    Content="PREDSTAVE" 
+                    FontWeight="Bold"
+                    Height="30" 
+                    Width="220"
+                    BorderThickness="0"
+                    FontSize="18"/>
+
+                <TextBox Text="IZDAVANJE PREDSTAVA"
+                     Background="CornflowerBlue"
+                     Grid.Row="3"
+                     FontWeight="Bold"
+                     FontSize="18" 
+                     Height="30" 
+                     Width="220"
+                     TextAlignment="Center"
+                     BorderThickness="0"/>
+
+                <Button x:Name="txtSale" 
+                    Background="Transparent" 
+                    Grid.Row="4"
+                    Click="btnSale_Click" 
+                    Content="SALE" 
+                    FontWeight="Bold"
+                    Height="30" 
+                    FontSize="18"
+                    BorderThickness="0"/>
+
+                <Button x:Name="txtSedista" 
+                    Background="Transparent" 
+                    Grid.Row="5"
+                    Click="btnSedista_Click" 
+                    Content="SEDISTA" 
+                    FontWeight="Bold"
+                    Height="30" 
+                    FontSize="18"
+                    BorderThickness="0"/>
+
+                <Button x:Name="txtLogout" 
+                    Background="Transparent" 
+                    Grid.Row="6"
+                    Click="txtLogout_Click" 
+                    Content="LOGOUT" 
+                    FontWeight="Bold"
+                    Height="30" 
+                    FontSize="18" 
+                    Margin="0,101,0,36"
+                    BorderThickness="0"/>
+
+            </Grid>
+        </StackPanel>
+
+
+        <StackPanel Grid.Column="1">
+
+
+            <Grid HorizontalAlignment="Left" 
+                  Height="236" 
+                  Margin="10,10,0,0" 
+                  Width="610">
+
+
+                <Label Content="ID IZVODJENJA" 
+                       HorizontalAlignment="Left" 
+                       Margin="15,30,0,0" 
+                       VerticalAlignment="Top" 
+                       FontSize="24"/>
+
+                <Label Content="NAZIV PREDSTAVE" 
+                       HorizontalAlignment="Left" 
+                       Margin="15,70,0,0"
+                       VerticalAlignment="Top" 
+                       FontSize="24"/>
+
+                <Label Content="NAZIV SALE" 
+                       HorizontalAlignment="Left" 
+                       Margin="15,110,0,0"
+                       VerticalAlignment="Top" 
+                       FontSize="24"/>
+
+                <Label Content="VREME IZVODJENJA" 
+                       HorizontalAlignment="Left" 
+                       Margin="15,150,0,0"
+                       VerticalAlignment="Top" 
+                       FontSize="24"/>
+
+                <ComboBox Name="ID" Margin="244,40,216,172" SelectionChanged="ID_SelectionChanged" />
+
+                <ComboBox Name="NazivPredstave" Margin="244,80,216,132" />
+
+                <ComboBox Name="NazivSale" Margin="244,120,216,92"/>
+
+                <DatePicker Name="Vreme" 
+                            FirstDayOfWeek="Monday"
+                            Margin="244,160,216,52" 
+                            SelectedDateFormat="Short"/>
+
+                <Button Content="Dodaj" 
+                        HorizontalAlignment="Left" 
+                        Margin="461,40,0,0"
+                        VerticalAlignment="Top" 
+                        Width="100" 
+                        Click="BtnDodaj_Click" 
+                        Height="30"
+                        FontSize="20"/>
+
+                <Button Content="Izmeni" 
+                        HorizontalAlignment="Left" 
+                        Margin="461,100,0,0"
+                        VerticalAlignment="Top" 
+                        Width="100" 
+                        Click="BtnIzmeni_Click"
+                        Height="30"
+                        FontSize="20"/>
+
+                <Button Content="Obrisi" 
+                        HorizontalAlignment="Left" 
+                        Margin="461 160,0,0"
+                        VerticalAlignment="Top" 
+                        Width="100" 
+                        Click="BtnObrisi_Click" 
+                        Height="30"
+                        FontSize="20"/>
+            </Grid>
+
+            <DataGrid x:Name="IzvodjenjeDataGrid" Height="185" Margin="0 20" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding ID}" Header="ID izvodjenja"  Width="*"/>
+                    <DataGridTextColumn Binding="{Binding NazivPredstave}" Header="Naziv Predstave" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding NazivSale}" Header="Naziv sale" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding VremeIzvodjenja}" Header="Vreme Izvodjenja" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
